@@ -1,17 +1,23 @@
-import connectionDB from "./db/index.js";
-import app from "./app.js";
-import dotenv from "dotenv";
+const app = require("./app");
+const { sq, connectDB } = require("./db/index");
+const Form = require("./db/models/formModel");
+const User = require("./db/models/userModels");
 
-dotenv.config({
-  path: "./.env",
-});
+require("dotenv").config();
 
-connectionDB()
+connectDB()
   .then(() => {
-    app.listen(process.env.PORT || 4000, () => {
-      console.log("Server is running at the port: ", process.env.PORT);
-    });
+    app.listen(
+      process.env.PORT || 4000,
+      console.log(`App is listening at the port : ${process.env.PORT}`)
+    );
   })
   .catch((error) => {
-    console.log("Database connection failed", error);
+    console.log("Error : ", error);
   });
+Form.sync().then(() => {
+  console.log("form Model synced");
+});
+User.sync().then(() => {
+  console.log("User Model synced");
+});

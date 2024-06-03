@@ -2,5 +2,8 @@
 
 - [x] Initial Setup
 - [x] Connection to Database
-- [ ] Models
-- [ ]
+- [x] Models
+- [x] Form route created and tested
+- [ ] User routes created and tested
+- [ ] Final touch
+- [ ] Completed

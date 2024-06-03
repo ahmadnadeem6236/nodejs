@@ -1,14 +1,16 @@
-import { Sequelize } from "sequelize";
+const { Sequelize } = require("sequelize");
 
-async function connectionDB() {
-  const sequelize = new Sequelize(process.env.psql);
+const sequelize = new Sequelize(process.env.psql, {
+  dialect: "postgres",
+});
 
+const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log("Connect has been establish successfully.");
+    console.log("Connection has been established successfully.");
   } catch (error) {
-    console.error("Unable to connect to the db: ", error);
+    console.error("Unable to connect to the database:", error);
   }
-}
+};
 
-export default connectionDB;
+module.exports = { sq: sequelize, connectDB };
