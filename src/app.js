@@ -17,8 +17,10 @@ app.use(
 );
 
 const formRoutes = require("./routes/formRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 app.use("/form", formRoutes);
+app.use("/fill_data", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("helloooooo");

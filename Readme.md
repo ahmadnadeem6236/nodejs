@@ -3,7 +3,8 @@
 - [x] Initial Setup
 - [x] Connection to Database
 - [x] Models
-- [x] Form route created and tested
-- [ ] User routes created and tested
+- [x] POST - Form route created and tested
+- [x] POST - User routes created and tested
+- [ ] GET - Users data
 - [ ] Final touch
 - [ ] Completed

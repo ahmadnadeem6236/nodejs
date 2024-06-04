@@ -1,30 +1,29 @@
 const expressAsyncHandler = require("express-async-handler");
 const { v4: uuidv4 } = require("uuid");
 const { sq } = require("../db");
-const Form = require("../db/models/formModel");
+const User = require("../db/models/userModels");
 
 let uuidgen = uuidv4();
 
-const formController = expressAsyncHandler(async (req, res) => {
-  const formData = {
+const userController = expressAsyncHandler(async (req, res) => {
+  const userData = {
     uuid: uuidgen,
-    title: req.body.title,
     name: req.body.name,
     email: req.body.email,
     phonenumber: req.body.phonenumber,
     isGraduate: req.body.isGraduate,
   };
 
-  const form = Form.create(formData)
+  const user = User.create(userData)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the form data.",
+          err.message || "Some error occurred while creating the user data.",
       });
     });
 });
 
-module.exports = formController;
+module.exports = userController;

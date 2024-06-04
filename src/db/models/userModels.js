@@ -1,9 +1,10 @@
 const { sq } = require("../index");
-const { DataTypes } = require("sequelize");
+const { DataTypes, UUIDV4 } = require("sequelize");
 
 const User = sq.define("user", {
   uniqueId: {
     type: DataTypes.UUID,
+    defaultValue: UUIDV4,
   },
   name: {
     type: DataTypes.STRING,
