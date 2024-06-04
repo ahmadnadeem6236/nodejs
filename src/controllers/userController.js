@@ -33,4 +33,16 @@ const userController = expressAsyncHandler(async (req, res) => {
     });
 });
 
-module.exports = userController;
+const fetchAllUserController = expressAsyncHandler(async (req, res) => {
+  const fetchUsers = await User.findAll();
+  try {
+    if (fetchUsers) {
+      res.status(200);
+      res.send(fetchUsers);
+    }
+  } catch (error) {
+    throw new Error("No users are present");
+  }
+});
+
+module.exports = { userController, fetchAllUserController };

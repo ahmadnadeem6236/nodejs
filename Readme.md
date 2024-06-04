@@ -6,6 +6,6 @@
 - [x] POST - Form route created and tested
 - [x] POST - User routes created and tested
 - [x] POST - Validations
-- [ ] GET - Users data
-- [ ] Final touch
-- [ ] Completed
+- [x] GET - Users data
+- [x] Final touch
+- [x] Completed

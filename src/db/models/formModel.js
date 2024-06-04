@@ -19,7 +19,7 @@ const Form = sq.define("form", {
     allowNull: false,
   },
   phonenumber: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     allowNull: false,
   },
   isGraduate: {

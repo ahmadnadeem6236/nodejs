@@ -15,7 +15,7 @@ const User = sq.define("user", {
     allowNull: false,
   },
   phonenumber: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     allowNull: false,
   },
   isGraduate: {

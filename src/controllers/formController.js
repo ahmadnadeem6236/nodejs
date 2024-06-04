@@ -35,4 +35,4 @@ const formController = expressAsyncHandler(async (req, res) => {
     });
 });
 
-module.exports = formController;
+module.exports = { formController };
