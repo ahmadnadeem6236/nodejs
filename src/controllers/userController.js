@@ -6,6 +6,13 @@ const User = require("../db/models/userModels");
 let uuidgen = uuidv4();
 
 const userController = expressAsyncHandler(async (req, res) => {
+  if (
+    req.body.name &&
+    req.body.email != String &&
+    req.body.isGraduate === Boolean
+  )
+    throw new Error("Fill the form with correct datatypes");
+
   const userData = {
     uuid: uuidgen,
     name: req.body.name,

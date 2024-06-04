@@ -15,9 +15,11 @@ connectDB()
   .catch((error) => {
     console.log("Error : ", error);
   });
+
 Form.sync().then(() => {
   console.log("form Model synced");
 });
+
 User.sync().then(() => {
   console.log("User Model synced");
 });
